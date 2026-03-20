@@ -27,9 +27,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <Text>coloca teu CEP ai</Text>
+      <Text style={styles.texto}>coloca teu CEP ai</Text>
       <TextInput 
         placeholder="digita aqui meu"
+        placeholderTextColor="white"
         value={inputCep}
         onChangeText={setInputCep}
       />
@@ -43,32 +44,58 @@ export default function App() {
       }
       {
         cep.logradouro != null && (
-          <Text> Endereço : {cep.logradouro} </Text>
+          <View style={styles.arthurNinja3000}>
+            <Text style={styles.label}>Endereço: </Text>
+            <TextInput style={styles.texto} 
+              value={cep.logradouro}      
+            />
+          </View>
+        
         )
       }
       {
         cep.bairro != null && (
-          <Text> Bairro: {cep.bairro} </Text>
+          <View style={styles.arthurNinja3000}>
+            <Text style={styles.label}>Bairro: </Text>
+            <TextInput style={styles.texto} 
+              value={cep.bairro}      
+            />
+          </View>
         )
       }
       {
         cep.cidade != null && (
-          <Text> Cidade : {cep.cidade} </Text>
+          <View style={styles.arthurNinja3000}>
+            <Text style={styles.label}>Cidade: </Text>
+            <TextInput style={styles.texto} 
+              value={cep.cidade}      
+            />
+          </View>
         )
       }
       {
         cep.estado != null && (
-          <Text> Estado : {cep.estado} </Text>
+          <View style={styles.arthurNinja3000}>
+            <Text style={styles.label}>Estado: </Text>
+            <TextInput style={styles.texto} 
+              value={cep.estado}      
+            />
+          </View>
         )
       }
       {
         cep.numero != null && (
-          <Text> Numero : {cep.numero} </Text>
+          <View style={styles.arthurNinja3000}>
+            <Text style={styles.label}>Número: </Text>
+            <TextInput style={styles.texto} 
+              value={cep.numero}      
+            />
+          </View>
         )
       }
       {
         cep.complemento != null && (
-          <Text> Complemento : {cep.complemento} </Text>
+          <Text style={styles.texto}> Complemento : {cep.complemento} </Text>
         )
       }
     </View>
@@ -78,8 +105,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#2c2c2c',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  arthurNinja3000:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 20
+  }
+  ,
+  texto:{
+    color: 'white'
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#ffffff',
   },
 });
